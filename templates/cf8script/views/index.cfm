@@ -1,5 +1,7 @@
 <h1>Listing [NamePluralLowercase]</h1>
-
+<cfif flashKeyExists("message")>
+	<cfoutput><p>#flash("message")#</p></cfoutput>
+</cfif>
 <cftable query="[NamePluralLowercase]" colHeaders="true" HTMLTable="true">
 	LISTINGCOLUMNS
 	<cfcol header="" text="#linkTo(text='Show', action='show', key=[PrimaryKey])#" />

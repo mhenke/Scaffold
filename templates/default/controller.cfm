@@ -13,7 +13,7 @@
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject([NameSingularLowercase])>
-	        <cfset flashInsert(error="[NameSingularUppercase] #params.key# was not found")>
+	        <cfset flashInsert(message="[NameSingularUppercase] #params.key# was not found")>
 	        <cfset redirectTo(action="index")>
 	    </cfif>
 			
@@ -32,7 +32,7 @@
     	
     	<!--- Check if the record exists --->
 	    <cfif NOT IsObject([NameSingularLowercase])>
-	        <cfset flashInsert(error="[NameSingularUppercase] #params.key# was not found")>
+	        <cfset flashInsert(message="[NameSingularUppercase] #params.key# was not found")>
 			<cfset redirectTo(action="index")>
 	    </cfif>
 		
@@ -44,11 +44,11 @@
 		
 		<!--- Verify that the [NameSingularLowercase] creates successfully --->
 		<cfif [NameSingularLowercase].save()>
-			<cfset flashInsert(success="The [NameSingularLowercase] was created successfully.")>
+			<cfset flashInsert(message="The [NameSingularLowercase] was created successfully.")>
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error creating the [NameSingularLowercase].")>
+			<cfset flashInsert(message="There was an error creating the [NameSingularLowercase].")>
 			<cfset renderPage(action="new")>
 		</cfif>
 	</cffunction>
@@ -59,11 +59,11 @@
 		
 		<!--- Verify that the [NameSingularLowercase] updates successfully --->
 		<cfif [NameSingularLowercase].update(params.[NameSingularLowercase])>
-			<cfset flashInsert(success="The [NameSingularLowercase] was updated successfully.")>	
+			<cfset flashInsert(message="The [NameSingularLowercase] was updated successfully.")>	
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error updating the [NameSingularLowercase].")>
+			<cfset flashInsert(message="There was an error updating the [NameSingularLowercase].")>
 			<cfset renderPage(action="edit")>
 		</cfif>
 	</cffunction>
@@ -74,11 +74,11 @@
 		
 		<!--- Verify that the [NameSingularLowercase] deletes successfully --->
 		<cfif [NameSingularLowercase].delete()>
-			<cfset flashInsert(success="The [NameSingularLowercase] was deleted successfully.")>	
+			<cfset flashInsert(message="The [NameSingularLowercase] was deleted successfully.")>	
             <cfset redirectTo(action="index")>
 		<!--- Otherwise --->
 		<cfelse>
-			<cfset flashInsert(error="There was an error deleting the [NameSingularLowercase].")>
+			<cfset flashInsert(message="There was an error deleting the [NameSingularLowercase].")>
 			<cfset redirectTo(action="index")>
 		</cfif>
 	</cffunction>

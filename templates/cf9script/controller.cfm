@@ -13,7 +13,7 @@ component extends="Controller" output="false" {
     [NameSingularLowercase] = model("[NameSingularUppercase]").findByKey(params.key);
     	
     if (!IsObject([NameSingularLowercase])){
-      flashInsert(error="[NameSingularUppercase] #params.key# was not found");
+      flashInsert(message="[NameSingularUppercase] #params.key# was not found");
       redirectTo(action="index");
     }
   }
@@ -28,7 +28,7 @@ component extends="Controller" output="false" {
     [NameSingularLowercase] = model("[NameSingularUppercase]").findByKey(params.key);
     	
     if (!IsObject([NameSingularLowercase])){
-	    flashInsert(error="[NameSingularUppercase] #params.key# was not found");
+	    flashInsert(message="[NameSingularUppercase] #params.key# was not found");
 			redirectTo(action="index");
 	  }
   }
@@ -38,10 +38,10 @@ component extends="Controller" output="false" {
     [NameSingularLowercase] = model("[NameSingularUppercase]").new(params.[NameSingularLowercase]);
 		
 		if ([NameSingularLowercase].save()){
-			flashInsert(success="The [NameSingularLowercase] was created successfully.");
+			flashInsert(message="The [NameSingularLowercase] was created successfully.");
       redirectTo(action="index");
 		} else {
-		  flashInsert(error="There was an error creating the [NameSingularLowercase].");
+		  flashInsert(message="There was an error creating the [NameSingularLowercase].");
 		  renderPage(action="new");
 		}
   }
@@ -51,10 +51,10 @@ component extends="Controller" output="false" {
     [NameSingularLowercase] = model("[NameSingularUppercase]").findByKey(params.key);
 		
 		if ([NameSingularLowercase].update(params.[NameSingularLowercase])){
-		  flashInsert(success="The [NameSingularLowercase] was updated successfully.");
+		  flashInsert(message="The [NameSingularLowercase] was updated successfully.");
       redirectTo(action="index");
 		} else {
-		  flashInsert(error="There was an error updating the [NameSingularLowercase].");
+		  flashInsert(message="There was an error updating the [NameSingularLowercase].");
 			renderPage(action="edit");
 		}
   }
@@ -64,10 +64,10 @@ component extends="Controller" output="false" {
     [NameSingularLowercase] = model("[NameSingularUppercase]").findByKey(params.key);
 
 		if ([NameSingularLowercase].delete()){
-			flashInsert(success="The [NameSingularLowercase] was deleted successfully.");
+			flashInsert(message="The [NameSingularLowercase] was deleted successfully.");
       redirectTo(action="index");
     } else {
-      flashInsert(error="There was an error deleting the [NameSingularLowercase].");
+      flashInsert(message="There was an error deleting the [NameSingularLowercase].");
 			redirectTo(action="index");
     }
   }

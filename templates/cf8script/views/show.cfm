@@ -1,5 +1,7 @@
 <h1>Showing [NameSingularLowercase]</h1>
-
+<cfif flashKeyExists("message")>
+	<cfoutput><p>#flash("message")#</p></cfoutput>
+</cfif>
 <cfoutput>
 LISTINGCOLUMNS
 
