@@ -37,7 +37,7 @@
 	
 	<p><label for="typeOfScaffold">Type</label> <br>
 	<cfselect name="typeOfScaffold">
-		<option value="everything" selected="selected">Model, Views and Controller</option>
+		<option value="everything" selected="selected" >Model, Views and Controller</option>
 		<option value="controller">Controller</option>
 		<option value="model">Model</option>
 	</cfselect>
@@ -48,7 +48,11 @@
 	    <cfselect name="template">
 	        <cfoutput query="templates">
 	            <cfif type is "DIR">
-	                <option value="#name#">#name#</option>
+	                <option value="#name#" 
+						<cfif name EQ "default">
+							selected="selected"
+						</cfif>
+					>#name#</option>
 	            </cfif>
 	        </cfoutput>
     	</cfselect>
